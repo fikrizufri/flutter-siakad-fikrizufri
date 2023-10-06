@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_siakad/bloc/bloc/login_bloc.dart';
 import 'package:flutter_siakad/common/constants/colors.dart';
 import 'package:flutter_siakad/pages/auth/widgets/login_bottom_sheet.dart';
-import 'package:flutter_siakad/pages/mahasiswa/mahasiswa_page.dart';
 
 import '../../common/constants/images.dart';
 import '../../common/widgets/buttons.dart';
@@ -56,14 +57,10 @@ class _AuthPageState extends State<AuthPage> {
                   useSafeArea: true,
                   isScrollControlled: true,
                   builder: (BuildContext context) {
-                    return LoginBottomSheet(onPressed: () {
-                      Navigator.pop(context);
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const MahasiswaPage(),
-                          ));
-                    });
+                    return BlocProvider(
+                      create: (context) => LoginBloc(),
+                      child: const LoginBottomSheet(),
+                    );
                   });
             },
             label: "Login",

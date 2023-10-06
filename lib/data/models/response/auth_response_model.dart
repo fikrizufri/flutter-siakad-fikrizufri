@@ -9,20 +9,20 @@ class AuthResponseModel {
     required this.user,
   });
 
-  factory AuthResponseModel.fromRawJson(String str) =>
-      AuthResponseModel.fromJson(json.decode(str));
+  factory AuthResponseModel.fromJson(String str) =>
+      AuthResponseModel.fromMap(json.decode(str));
 
-  String toRawJson() => json.encode(toJson());
+  String toJson() => json.encode(toMap());
 
-  factory AuthResponseModel.fromJson(Map<String, dynamic> json) =>
+  factory AuthResponseModel.fromMap(Map<String, dynamic> json) =>
       AuthResponseModel(
         jwtToken: json["jwt-token"],
-        user: User.fromJson(json["user"]),
+        user: User.fromMap(json["user"]),
       );
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toMap() => {
         "jwt-token": jwtToken,
-        "user": user.toJson(),
+        "user": user.toMap(),
       };
 }
 
@@ -39,18 +39,18 @@ class User {
     required this.roles,
   });
 
-  factory User.fromRawJson(String str) => User.fromJson(json.decode(str));
+  factory User.fromJson(String str) => User.fromMap(json.decode(str));
 
-  String toRawJson() => json.encode(toJson());
+  String toJson() => json.encode(toMap());
 
-  factory User.fromJson(Map<String, dynamic> json) => User(
+  factory User.fromMap(Map<String, dynamic> json) => User(
         id: json["id"],
         name: json["name"],
         email: json["email"],
         roles: json["roles"],
       );
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toMap() => {
         "id": id,
         "name": name,
         "email": email,
