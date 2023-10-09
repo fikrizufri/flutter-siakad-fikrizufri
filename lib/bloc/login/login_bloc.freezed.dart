@@ -196,10 +196,10 @@ class __$$LoginImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? requestModel = freezed,
+    Object? requestModel = null,
   }) {
     return _then(_$LoginImpl(
-      freezed == requestModel
+      null == requestModel
           ? _value.requestModel
           : requestModel // ignore: cast_nullable_to_non_nullable
               as AuthRequestModel,
@@ -225,13 +225,12 @@ class _$LoginImpl implements _Login {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginImpl &&
-            const DeepCollectionEquality()
-                .equals(other.requestModel, requestModel));
+            (identical(other.requestModel, requestModel) ||
+                other.requestModel == requestModel));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(requestModel));
+  int get hashCode => Object.hash(runtimeType, requestModel);
 
   @JsonKey(ignore: true)
   @override

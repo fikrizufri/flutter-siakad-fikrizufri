@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_siakad/common/constants/colors.dart';
 import 'package:flutter_siakad/common/constants/icons.dart';
 import 'package:flutter_siakad/pages/mahasiswa/dashboard_page.dart';
+import 'package:flutter_siakad/pages/profile/profile_page.dart';
 
 class MahasiswaPage extends StatefulWidget {
   const MahasiswaPage({super.key});
@@ -18,9 +19,7 @@ class _MahasiswaPageState extends State<MahasiswaPage> {
     const Center(
       child: Text("Schedule"),
     ),
-    const Center(
-      child: Text("Profile"),
-    ),
+    const ProfilePage(role: 'Mahasiswa'),
   ];
 
   void _onItemTapped(int index) {

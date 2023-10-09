@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_siakad/bloc/bloc/login_bloc.dart';
+import 'package:flutter_siakad/bloc/login/login_bloc.dart';
 import 'package:flutter_siakad/common/constants/colors.dart';
 import 'package:flutter_siakad/pages/auth/widgets/login_bottom_sheet.dart';
 

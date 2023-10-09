@@ -24,7 +24,7 @@ class _DashboardPageState extends State<DashboardPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
-              "Perkuliahan",
+              "Perkuliahan APA",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w700,

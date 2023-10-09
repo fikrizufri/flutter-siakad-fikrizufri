@@ -1,5 +1,5 @@
-// ignore: depend_on_referenced_packages
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:flutter_siakad/data/models/request/auth_request_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

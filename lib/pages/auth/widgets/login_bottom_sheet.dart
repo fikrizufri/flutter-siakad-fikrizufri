@@ -1,8 +1,7 @@
-import 'dart:js_util';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_siakad/bloc/bloc/login_bloc.dart';
+import 'package:flutter_siakad/bloc/login/login_bloc.dart';
+import 'package:flutter_siakad/data/datasource/auth_local_datasource.dart';
 import 'package:flutter_siakad/data/models/request/auth_request_model.dart';
 import 'package:flutter_siakad/pages/dosen/dosen_page.dart';
 import 'package:flutter_siakad/pages/mahasiswa/mahasiswa_page.dart';
@@ -99,6 +98,7 @@ class _LoginBottomSheetState extends State<LoginBottomSheet> {
                   state.maybeWhen(
                       orElse: () {},
                       loaded: (data) {
+                        AuthLocalDataSource().saveAuthData(data);
                         if (data.user.roles == 'mahasiswa') {
                           Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) {
